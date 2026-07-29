@@ -5,7 +5,7 @@ import { useRef } from "react";
 import ParticlesBg from "./ParticlesBg";
 import GoldButton from "./GoldButton";
 import Logo from "./Logo";
-import { APPLY_URL } from "@/lib/constants";
+import { useApplyModal } from "@/lib/apply-modal-context";
 
 const headlineLines = [
   "Ya llegaste al millón.",
@@ -14,6 +14,7 @@ const headlineLines = [
 ];
 
 export default function Hero() {
+  const { openApplyModal } = useApplyModal();
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -84,7 +85,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 1.3, type: "spring", bounce: 0.45 }}
           className="mt-10 flex flex-col items-center gap-3"
         >
-          <GoldButton href={APPLY_URL} size="lg">
+          <GoldButton onClick={openApplyModal} size="lg">
             Quiero Aplicar
           </GoldButton>
           <span className="font-body text-xs text-text-muted md:text-sm">

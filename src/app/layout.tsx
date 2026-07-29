@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins, Montserrat } from "next/font/google";
+import { ApplyModalProvider } from "@/lib/apply-modal-context";
+import ApplyModal from "@/components/ApplyModal";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -32,7 +34,10 @@ export default function RootLayout({
       className={`${poppins.variable} ${montserrat.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-black text-white">
-        {children}
+        <ApplyModalProvider>
+          {children}
+          <ApplyModal />
+        </ApplyModalProvider>
       </body>
     </html>
   );

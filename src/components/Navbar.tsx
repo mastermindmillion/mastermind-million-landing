@@ -3,10 +3,11 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Logo from "./Logo";
-import { APPLY_URL } from "@/lib/constants";
+import { useApplyModal } from "@/lib/apply-modal-context";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const { openApplyModal } = useApplyModal();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80);
@@ -38,12 +39,13 @@ export default function Navbar() {
           </span>
         </a>
 
-        <a
-          href={APPLY_URL}
+        <button
+          type="button"
+          onClick={openApplyModal}
           className="shimmer-btn rounded-full px-5 py-2.5 font-body text-xs font-semibold uppercase tracking-[0.15em] text-black md:px-6 md:py-3 md:text-sm"
         >
           Aplica Ahora
-        </a>
+        </button>
       </nav>
     </motion.header>
   );
