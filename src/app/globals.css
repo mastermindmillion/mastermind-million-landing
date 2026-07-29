@@ -1,26 +1,113 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --black: #000000;
+  --black-soft: #0a0a0a;
+  --gold: #d4a362;
+  --gold-deep: #b17f40;
+  --gold-light: #e8d9ae;
+  --white: #f5f5f3;
+  --text-muted: #8a8a86;
+  --ink: #15120d;
+  --ink-muted: #5c5648;
+
+  --font-heading: var(--font-poppins);
+  --font-body: var(--font-montserrat);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-black: var(--black);
+  --color-black-soft: var(--black-soft);
+  --color-gold: var(--gold);
+  --color-gold-deep: var(--gold-deep);
+  --color-gold-light: var(--gold-light);
+  --color-white: var(--white);
+  --color-text-muted: var(--text-muted);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-body), sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-heading {
+  font-family: var(--font-heading), sans-serif;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(
+    135deg,
+    #b17f40 0%,
+    #d4a362 45%,
+    #e8d9ae 70%,
+    #d4a362 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(
+    135deg,
+    #b17f40 0%,
+    #d4a362 45%,
+    #e8d9ae 70%,
+    #d4a362 100%
+  );
+}
+
+.noise-bg {
+  position: relative;
+}
+
+.noise-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.03;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.shimmer-btn {
+  background: linear-gradient(
+    110deg,
+    var(--gold-deep) 0%,
+    var(--gold) 25%,
+    var(--gold-light) 50%,
+    var(--gold) 75%,
+    var(--gold-deep) 100%
+  );
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--black);
+}
+
+html {
+  scroll-behavior: smooth;
 }
