@@ -12,7 +12,6 @@ const items = [
   "Acceso a sala de trabajo con 50 líderes del mismo nivel",
   "Hot seats individuales: estrategia en vivo validada por el grupo",
   "Sesiones de networking estructurado con metodología",
-  "Acceso al grupo privado post-evento",
   "Registro fotográfico profesional del evento",
 ];
 

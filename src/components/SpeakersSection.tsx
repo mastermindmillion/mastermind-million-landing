@@ -26,8 +26,7 @@ const speakers = [
     name: "Pancho Faraggi",
     initials: "PF",
     photo: "/speakers/pancho-faraggi.jpg",
-    focus: "50% 15%",
-    scale: 1.6,
+    focus: "50% 20%",
     topic: "Viralidad orgánica",
     detail:
       "Cómo conseguí 4 millones de seguidores en Instagram y 5 millones en TikTok “como hobby”, y cómo hacer crecer tu cuenta.",

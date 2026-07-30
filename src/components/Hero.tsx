@@ -6,9 +6,8 @@ import ParticlesBg from "./ParticlesBg";
 import Logo from "./Logo";
 
 const headlineLines = [
-  "Ya llegaste al millón.",
-  "Ahora necesitas la sala correcta",
-  "para ir al siguiente nivel.",
+  "Un espacio exclusivo para empresarios",
+  "y creadores con mentalidad de millón",
 ];
 
 export default function Hero() {
@@ -70,10 +69,9 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 1.05 }}
           className="mx-auto mt-6 max-w-xl font-body text-base text-text-muted md:text-lg"
         >
-          Única condición de entrada:
-          <span className="mt-1 block gold-gradient-text font-heading text-2xl font-semibold md:text-3xl">
-            +$1M USD facturados
-          </span>
+          Durante 2 días vivirás conversaciones de alto nivel, conexiones
+          estratégicas y aprendizajes junto a ponentes que facturan más de 8
+          cifras anuales.
         </motion.p>
       </div>
     </section>
