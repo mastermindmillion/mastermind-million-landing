@@ -6,8 +6,9 @@ import ParticlesBg from "./ParticlesBg";
 import Logo from "./Logo";
 
 const headlineLines = [
-  "Un espacio exclusivo para empresarios",
-  "y creadores con mentalidad de millón",
+  "Un espacio exclusivo para",
+  "empresarios y creadores",
+  "con mentalidad de millón",
 ];
 
 export default function Hero() {
@@ -49,7 +50,7 @@ export default function Hero() {
           CDMX · 29 &amp; 30 DE AGOSTO 2026
         </motion.div>
 
-        <h1 className="font-heading text-3xl font-medium leading-tight text-white md:text-5xl lg:text-6xl">
+        <h1 className="font-heading text-2xl font-medium leading-tight text-white sm:text-3xl md:text-4xl lg:text-5xl">
           {headlineLines.map((line, i) => (
             <motion.span
               key={line}
@@ -67,7 +68,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.05 }}
-          className="mx-auto mt-6 max-w-xl font-body text-base text-text-muted md:text-lg"
+          className="mx-auto mt-6 mb-10 max-w-xl font-body text-base text-text-muted md:mb-16 md:max-w-3xl md:text-lg"
         >
           Durante 2 días vivirás conversaciones de alto nivel, conexiones
           estratégicas y aprendizajes junto a ponentes que facturan más de 8
