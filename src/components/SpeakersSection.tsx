@@ -78,6 +78,7 @@ const speakers = [
     name: "Andrea Rodríguez",
     initials: "AR",
     photo: "/speakers/andrea-rodriguez.jpg",
+    focus: "50% 18%",
     topic: "Inversiones en propiedades en EE.UU, Dubai y Latam",
     detail:
       "Cómo diversificar tu patrimonio invirtiendo en bienes raíces en mercados internacionales de alto crecimiento.",
