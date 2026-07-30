@@ -3,13 +3,9 @@
 import SectionTitle from "./SectionTitle";
 import ScrollReveal from "./ScrollReveal";
 import StatCounter from "./StatCounter";
-import GoldButton from "./GoldButton";
 import WaveBand from "./WaveBand";
-import { useApplyModal } from "@/lib/apply-modal-context";
 
 export default function PruebaSocialSection() {
-  const { openApplyModal } = useApplyModal();
-
   return (
     <WaveBand className="px-6 py-28 md:py-36">
       <div className="mx-auto max-w-3xl text-center">
@@ -33,12 +29,6 @@ export default function PruebaSocialSection() {
           <p className="mt-3 font-body text-sm text-ink-muted">
             facturados en conjunto por los asistentes confirmados
           </p>
-        </ScrollReveal>
-
-        <ScrollReveal delay={0.3} className="mt-10">
-          <GoldButton onClick={openApplyModal} size="lg">
-            Quiero Aplicar
-          </GoldButton>
         </ScrollReveal>
       </div>
     </WaveBand>

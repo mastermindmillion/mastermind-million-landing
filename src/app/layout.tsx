@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import { Poppins, Montserrat } from "next/font/google";
-import { ApplyModalProvider } from "@/lib/apply-modal-context";
-import ApplyModal from "@/components/ApplyModal";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -20,7 +18,7 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "Mastermind Million | CDMX · 29 & 30 de agosto 2026",
   description:
-    "50 líderes. 2 días. Una sola condición de entrada: +$1M USD facturados. Aplica para tu cupo en Mastermind Million, CDMX.",
+    "50 líderes. 2 días. Una sola condición de entrada: +$1M USD facturados. Conoce todos los detalles de Mastermind Million, CDMX.",
 };
 
 export default function RootLayout({
@@ -34,10 +32,7 @@ export default function RootLayout({
       className={`${poppins.variable} ${montserrat.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-black text-white">
-        <ApplyModalProvider>
-          {children}
-          <ApplyModal />
-        </ApplyModalProvider>
+        {children}
       </body>
     </html>
   );

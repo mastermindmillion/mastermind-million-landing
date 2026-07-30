@@ -3,9 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import ParticlesBg from "./ParticlesBg";
-import GoldButton from "./GoldButton";
 import Logo from "./Logo";
-import { useApplyModal } from "@/lib/apply-modal-context";
 
 const headlineLines = [
   "Ya llegaste al millón.",
@@ -14,7 +12,6 @@ const headlineLines = [
 ];
 
 export default function Hero() {
-  const { openApplyModal } = useApplyModal();
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -78,20 +75,6 @@ export default function Hero() {
             +$1M USD facturados
           </span>
         </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.85 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 1.3, type: "spring", bounce: 0.45 }}
-          className="mt-10 flex flex-col items-center gap-3"
-        >
-          <GoldButton onClick={openApplyModal} size="lg">
-            Quiero Aplicar
-          </GoldButton>
-          <span className="font-body text-xs text-text-muted md:text-sm">
-            Solo 50 cupos. Cuando se llena, se cierra.
-          </span>
-        </motion.div>
       </div>
     </section>
   );
