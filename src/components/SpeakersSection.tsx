@@ -43,7 +43,7 @@ const speakers = [
     name: "Antonio Olombrada",
     initials: "AO",
     photo: "/speakers/antonio-olombrada.jpg",
-    topic: "Procesos y equipo con IA",
+    topic: "Cómo escalar tu negocio y tu estructura en tiempos de IA",
     detail:
       "Cómo usar la IA para mejorar los procesos de tu empresa y tener un equipo pequeño pero de alto rendimiento.",
   },
