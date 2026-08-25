@@ -447,6 +447,10 @@
   var WHATSAPP_GROUP_URL = "https://chat.whatsapp.com/EojsvKG5CgD2wUpVmRsHkZ?s=sw&p=i&ilr=4";
   var SUPPORT_WHATSAPP_URL = "https://wa.link/zymhap";
 
+  // URL del Web App de Google Apps Script conectado a la hoja de cálculo.
+  var SHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbzNk-FLSABId02UJxhdaPcCma230gk4yKX6t-gZgppifErKPuz2db8sMoSV_rc1LZHNIA/exec";
+  var submitted = false;
+
   var DIAL_CODES = [
     {code:"+52", flag:"🇲🇽", name:"México"},
     {code:"+57", flag:"🇨🇴", name:"Colombia"},
@@ -495,7 +499,7 @@
       ] },
 
     { id:"coctel", sec:"01 · Confirmación", type:"choice", req:true,
-      q:"¿Nos acompañas al coctel de networking del día 2?",
+      q:"¿Nos acompañas al coctel de celebración en la noche del segundo día (19h a 21h)?",
       options:[{v:"Sí, ahí estaré"},{v:"No podré"},{v:"Aún no lo sé"}] },
 
     { id:"origen", sec:"02 · Viaje y hospedaje", type:"text",
@@ -513,7 +517,7 @@
     { id:"llegada_dia", sec:"02 · Viaje y hospedaje", type:"choice",
       q:"¿Qué día llegas a CDMX?",
       help:"Nos sirve para saber a quién esperar el día anterior.",
-      options:[{v:"Jueves 27"},{v:"Viernes 28"},{v:"Sábado 29"}] },
+      options:[{v:"Antes del jueves 27"},{v:"Jueves 27"},{v:"Viernes 28"},{v:"Sábado 29"}] },
 
     { id:"llegada_hora", sec:"02 · Viaje y hospedaje", type:"ampm",
       q:"¿A qué hora llegas, aproximadamente?",
@@ -545,7 +549,7 @@
       q:"¿En qué rango está tu facturación anual?",
       help:"Nadie más ve esta respuesta. Nos sirve para agrupar conversaciones que estén al mismo nivel.",
       options:[
-        {v:"Menos de USD 50K"},{v:"USD 50K – 100K"},{v:"USD 100K – 500K"},
+        {v:"Menos de USD 250K"},{v:"USD 250K – 500K"},
         {v:"USD 500K – 1M"},{v:"Más de USD 1M"},{v:"Prefiero no responder"}
       ] },
 
@@ -607,6 +611,31 @@
   }
   function clearPersisted(){
     try{ localStorage.removeItem(STORAGE_KEY); }catch(e){}
+  }
+
+  /* ---------- envío a Google Sheets ---------- */
+  var SHEET_FIELD_ORDER = [
+    "nombre","escarapela","whatsapp","dias","coctel","origen","hospedaje",
+    "llegada_dia","llegada_hora","acompanante","acompanante_nombre",
+    "empresa","nicho","tiempo","facturacion","equipo","redes",
+    "llevarte","reto","aporte","pedido","imagen","algo_mas","motivo"
+  ];
+
+  function submitToSheet(){
+    if(!SHEET_WEBAPP_URL || submitted) return;
+    submitted = true;
+
+    var payload = { timestamp: new Date().toISOString(), declined: declined };
+    SHEET_FIELD_ORDER.forEach(function(id){ payload[id] = A[id] || ""; });
+
+    try{
+      fetch(SHEET_WEBAPP_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(payload)
+      });
+    }catch(e){}
   }
 
   /* ---------- partículas de fondo ---------- */
@@ -801,6 +830,7 @@
   }
 
   function renderDone(){
+    submitToSheet();
     clearPersisted();
 
     card.innerHTML =
