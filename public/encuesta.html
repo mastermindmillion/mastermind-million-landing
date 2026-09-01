@@ -319,7 +319,7 @@
   var i = 0;
 
   // URL del Web App de Google Apps Script conectado a la hoja de cálculo.
-  var SHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbwE4K_HwG4mbFXd_JSo2dfRN_iwRM_GoMCeEBP76oSygRAqBoJR_1e-8i2DF7EOfFgHGg/exec";
+  var SHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbxW5QMwwEigC0PDvngaMvYHuPGxO2dWkOsjZQ1LDizHbQLXSrgMlxGZFjeI_ZCSWfJn4w/exec";
   var submitted = false;
 
   var SPEAKERS = [
@@ -338,25 +338,21 @@
     "Elisa Alves"
   ];
 
-  var PRODUCCION = [
-    "Sede (NH Collection Reforma)",
-    "Comida",
-    "Coffee breaks",
-    "Manejo de los tiempos",
-    "Sonido y audiovisuales"
-  ];
-
   var Q = [
     { id:"welcome", type:"welcome" },
 
     { id:"encanto", sec:"01 · Tu experiencia", type:"textarea", req:true,
       q:"Cuéntanos algo que te encantó del evento.",
-      help:"Un momento, una frase, una conversación. Lo primero que se te venga a la cabeza suele ser lo más honesto.",
+      help:"Un momento, un insight, una conversación. Lo primero que se te venga a la cabeza suele ser lo más honesto.",
       ph:"Lo que no se te ha borrado desde que volviste" },
 
     { id:"expectativa", sec:"01 · Tu experiencia", type:"choice", req:true,
       q:"¿El evento cumplió lo que esperabas?",
-      options:["Superó lo que esperaba","Cumplió lo que esperaba","Se quedó corto"] }
+      options:["Superó lo que esperaba","Cumplió lo que esperaba","Se quedó corto"] },
+
+    { id:"speakers_intro", type:"section",
+      title:"Evaluación de las charlas",
+      text:"En las próximas páginas, vamos a evaluar cuánto te aportó la charla de cada speaker." }
   ];
 
   SPEAKERS.forEach(function(name, n){
@@ -367,20 +363,14 @@
   });
 
   Q.push(
-    { id:"produccion", sec:"03 · Producción", type:"multiscale",
-      items:PRODUCCION.slice(0,3), offset:0, req:true,
-      q:"¿Cómo estuvo la logística?",
-      help:"Del 1 al 10 cada aspecto." },
-
-    { id:"produccion", sec:"03 · Producción", type:"multiscale",
-      items:PRODUCCION.slice(3), offset:3,
-      q:"¿Y la ejecución del evento?",
-      help:"Del 1 al 10 cada aspecto." },
-
     { id:"mejorar", sec:"04 · Lo que sigue", type:"textarea", req:true,
       q:"¿Qué podríamos mejorar en el próximo encuentro?",
       help:"Puedes ser directo. Nadie se ofende y es la parte que más leemos.",
       ph:"Formato, agenda, dinámicas, nivel de la sala" },
+
+    { id:"algo_mas", sec:"04 · Lo que sigue", type:"textarea",
+      q:"¿Algo más que quieras comentar?",
+      ph:"Este espacio es tuyo" },
 
     { id:"referidos", sec:"05 · A quién más", type:"referrals",
       q:"Recomienda personas para la próxima edición.",
@@ -398,7 +388,7 @@
   function position(){
     var count = 0, total = 0;
     Q.forEach(function(q, idx){
-      if(q.type === "welcome" || q.type === "done") return;
+      if(q.type === "welcome" || q.type === "done" || q.type === "section") return;
       total++;
       if(idx <= i) count++;
     });
@@ -414,6 +404,7 @@
 
     if(q.type === "welcome")        renderWelcome();
     else if(q.type === "done")      renderDone();
+    else if(q.type === "section")    renderSection(q);
     else if(q.type === "scale")      renderScale(q);
     else if(q.type === "multiscale") renderMultiScale(q);
     else if(q.type === "choice")     renderChoice(q);
@@ -444,6 +435,18 @@
         '<span class="hint">o presiona <kbd>Enter</kbd> &nbsp;↵</span>' +
       '</div>';
     document.getElementById("start").onclick = advance;
+  }
+
+  function renderSection(q){
+    card.innerHTML =
+      '<div class="kicker lux-text">' + (q.sec || "") + '</div>' +
+      '<h1 class="title">' + q.title + '</h1>' +
+      '<p class="lede">' + q.text + '</p>' +
+      '<div class="actions">' +
+        '<button class="go" id="ok">Continuar</button>' +
+        '<span class="hint">o presiona <kbd>Enter</kbd> &nbsp;↵</span>' +
+      '</div>';
+    document.getElementById("ok").onclick = advance;
   }
 
   function renderText(q){
@@ -608,8 +611,7 @@
   var SHEET_FIELD_ORDER = [
     "encanto","expectativa",
     "sp_0","sp_1","sp_2","sp_3","sp_4","sp_5","sp_6","sp_7","sp_8","sp_9","sp_10","sp_11","sp_12",
-    "produccion_0","produccion_1","produccion_2","produccion_3","produccion_4",
-    "mejorar",
+    "mejorar","algo_mas",
     "ref1_n","ref1_i","ref2_n","ref2_i","ref3_n","ref3_i"
   ];
 
@@ -650,7 +652,7 @@
 
   function advance(){
     var q = Q[i];
-    if(q.type === "welcome"){ go(1); return; }
+    if(q.type === "welcome" || q.type === "section"){ go(1); return; }
     if(q.type === "done") return;
 
     if(q.type === "referrals"){
@@ -706,7 +708,7 @@
     var q = Q[i], pos = position();
     var pct = q.type === "welcome" ? 0 : (q.type === "done" ? 1 : pos.n / pos.total);
     fill.style.width = (pct * 100) + "%";
-    steps.textContent = (q.type === "welcome" || q.type === "done") ? "" : pos.n + " / " + pos.total;
+    steps.textContent = (q.type === "welcome" || q.type === "done" || q.type === "section") ? "" : pos.n + " / " + pos.total;
     btnPrev.disabled = i === 0;
     btnNext.disabled = q.type === "done";
   }
