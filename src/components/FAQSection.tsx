@@ -4,15 +4,20 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import SectionTitle from "./SectionTitle";
 import ScrollReveal from "./ScrollReveal";
+import ApplyButton from "./ApplyButton";
 
 const faqs = [
   {
     q: "¿Quién puede asistir?",
-    a: "Solo personas con +$1M USD facturados. Aplica y el equipo revisará tu perfil.",
+    a: "Personas invitadas por un miembro Million, con +$1M USD facturados. Aplica y el equipo revisará tu perfil.",
   },
   {
     q: "¿Dónde es el evento?",
-    a: "Hotel NH Collection Mexico City Reforma, CDMX. 29 y 30 de agosto de 2026.",
+    a: "Cartagena, Colombia. 22 y 23 de febrero de 2027.",
+  },
+  {
+    q: "¿Necesito una invitación de un miembro Million para aplicar?",
+    a: "Si un miembro Million te invitó, cuéntanoslo al aplicar. Si no, igual puedes aplicar y el equipo revisará tu perfil.",
   },
   {
     q: "¿Qué pasa después de que aplico?",
@@ -20,7 +25,7 @@ const faqs = [
   },
   {
     q: "¿Hay cupos limitados?",
-    a: "Sí. Solo 50 personas. Sin excepciones ni lista de espera para esta primera edición.",
+    a: "Sí. Cupos limitados, sin excepciones ni lista de espera para esta edición.",
   },
   {
     q: "¿Es un evento de networking genérico?",
@@ -82,6 +87,10 @@ export default function FAQSection() {
             <FAQItem key={f.q} q={f.q} a={f.a} />
           ))}
         </ScrollReveal>
+
+        <div className="mt-16 text-center">
+          <ApplyButton />
+        </div>
       </div>
     </section>
   );

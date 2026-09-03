@@ -2,13 +2,14 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
 import ParticlesBg from "./ParticlesBg";
 import Logo from "./Logo";
 
 const headlineLines = [
-  "Un espacio exclusivo para",
-  "empresarios y creadores",
-  "con mentalidad de millón",
+  "3 embudos para un",
+  "negocio digital millonario: VSL,",
+  "Lanzamientos y Eventos",
 ];
 
 export default function Hero() {
@@ -25,6 +26,15 @@ export default function Hero() {
       ref={sectionRef}
       className="noise-bg relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-black px-6 pt-32 pb-16 text-center"
     >
+      <Image
+        src="/hero/cartagena-bg.avif"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover opacity-80"
+      />
+      <div className="absolute inset-0 bg-black/75" />
       <ParticlesBg />
 
       <div className="relative z-10 flex w-full max-w-6xl flex-col items-center">
@@ -47,7 +57,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mb-6 rounded-full border border-gold/30 px-4 py-2 font-body text-[11px] font-medium uppercase tracking-[0.2em] text-gold-light md:text-xs"
         >
-          CDMX · 29 &amp; 30 DE AGOSTO 2026
+          CARTAGENA · 22 &amp; 23 DE FEBRERO 2027
         </motion.div>
 
         <h1 className="font-heading text-2xl font-medium leading-tight text-white sm:text-3xl md:text-4xl lg:text-5xl">
@@ -68,12 +78,21 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.05 }}
-          className="mx-auto mt-6 mb-10 max-w-xl font-body text-base text-text-muted md:mb-16 md:max-w-3xl md:text-lg"
+          className="mx-auto mt-6 mb-4 max-w-xl font-body text-base text-white md:max-w-3xl md:text-lg"
         >
-          Durante 2 días vivirás conversaciones de alto nivel, conexiones
-          estratégicas y aprendizajes junto a ponentes que facturan más de 8
-          cifras anuales.
+          ¿Fuiste invitado por un miembro Million a conocer un encuentro del
+          mastermind? Aplica para participar del encuentro.
         </motion.p>
+
+        <motion.a
+          href="#"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 1.2 }}
+          className="shimmer-btn mt-4 mb-10 rounded-full px-8 py-4 font-heading text-sm font-semibold uppercase tracking-[0.1em] text-black shadow-[0_0_30px_rgba(212,163,98,0.25)] transition-transform hover:-translate-y-0.5 md:mb-16 md:text-base"
+        >
+          Quiero aplicar
+        </motion.a>
       </div>
     </section>
   );

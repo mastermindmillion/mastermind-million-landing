@@ -3,15 +3,26 @@
 import Image from "next/image";
 import SectionTitle from "./SectionTitle";
 import GlowCard from "./GlowCard";
+import ApplyButton from "./ApplyButton";
 
-const speakers = [
+type Speaker = {
+  name: string;
+  initials: string;
+  photo?: string;
+  focus?: string;
+  scale?: number;
+  topic: string;
+  detail?: string;
+};
+
+const speakers: Speaker[] = [
   {
     name: "Mateus Zaiatz",
     initials: "MZ",
     photo: "/speakers/mateus-zaiatz.jpg",
-    topic: "Escala 10X",
+    topic: "Debriefing de lanzamiento",
     detail:
-      "Las palancas que multiplicaron por 10 el crecimiento anual de 3 expertos en 3 nichos: adelgazamiento, idiomas y desarrollo personal.",
+      "Debriefing completo de un lanzamiento de más de 2 millones de dólares.",
   },
   {
     name: "Ismael Cala",
@@ -23,6 +34,12 @@ const speakers = [
       "Cómo construir una marca personal sólida y una comunicación estratégica que te posicione como referente en tu industria.",
   },
   {
+    name: "Coral Mujaes",
+    initials: "CM",
+    photo: "/speakers/coral-mujaes.jpeg",
+    topic: "Por confirmar",
+  },
+  {
     name: "Pancho Faraggi",
     initials: "PF",
     photo: "/speakers/pancho-faraggi.jpg",
@@ -32,69 +49,33 @@ const speakers = [
       "Cómo conseguí 4 millones de seguidores en Instagram y 5 millones en TikTok “como hobby”, y cómo hacer crecer tu cuenta.",
   },
   {
-    name: "João Martins",
-    initials: "JM",
-    photo: "/speakers/joao-hashtag.png",
-    topic: "Cómo no desaparecer",
+    name: "Gustavo Duarte",
+    initials: "GD",
+    photo: "/speakers/gustavo-duarte.jpeg",
+    topic: "Embudo de VSL",
     detail:
-      "Así es cómo me he mantenido durante 5 años consecutivos en Hotmart Galaxy (Top 25 de los infoproductores con mayor facturación del mundo).",
+      "Cómo implementar un embudo de VSL que vende 10.000 USD al día. (Galaxy)",
   },
   {
-    name: "Antonio Olombrada",
-    initials: "AO",
-    photo: "/speakers/antonio-olombrada.jpg",
-    topic: "Cómo escalar tu negocio y tu estructura en tiempos de IA",
-    detail:
-      "Cómo usar la IA para mejorar los procesos de tu empresa y tener un equipo pequeño pero de alto rendimiento.",
+    name: "Viny Loureiro",
+    initials: "VL",
+    photo: "/speakers/viny-loureiro.webp",
+    focus: "50% 20%",
+    topic: "Por confirmar (Galaxy)",
   },
   {
-    name: "Isa Muñuruzi",
-    initials: "IM",
-    photo: "/speakers/isa-munuruzi.jpg",
-    topic: "Webinars semanales",
-    detail:
-      "Cómo ayudé a un proyecto a llegar a Nova30 sin depender de lanzamientos.",
+    name: "Gislene Isquierdo",
+    initials: "GI",
+    photo: "/speakers/gislene-isquierdo.jpg",
+    topic: "Pitch de ventas",
+    detail: "Cómo hacer un pitch de ventas perfecto.",
   },
   {
-    name: "Melissa Escobar",
-    initials: "ME",
-    photo: "/speakers/melissa-escobar.jpg",
-    topic: "Cómo crear contenido con IA",
-    detail:
-      "Estrategias prácticas para producir contenido de alto impacto con inteligencia artificial sin perder tu voz de marca.",
-  },
-  {
-    name: "Julio Iero",
-    initials: "JI",
-    photo: "/speakers/julio-iero.jpg",
-    focus: "50% 12%",
-    scale: 1.35,
-    topic: "Cómo crear anuncios virales y con storytelling",
-    detail:
-      "Cómo estructurar anuncios que enganchan desde el primer segundo combinando storytelling y data para maximizar conversión.",
-  },
-  {
-    name: "Andrea Rodríguez",
-    initials: "AR",
-    photo: "/speakers/andrea-rodriguez.jpg",
-    focus: "50% 18%",
-    topic: "Inversiones en propiedades en EE.UU, Dubai y Latam",
-    detail:
-      "Cómo diversificar tu patrimonio invirtiendo en bienes raíces en mercados internacionales de alto crecimiento.",
-  },
-  {
-    name: "Leonardo Fonseca",
-    initials: "LF",
-    photo: "/speakers/leonardo-fonseca.jpg",
-    topic: "El lanzamiento pago mensual",
-    detail: "Cómo funciona y cómo implementarlo paso a paso.",
-  },
-  {
-    name: "Speaker Hotmart",
-    initials: "H",
-    photo: "/speakers/hotmart.png",
-    topic: "Por confirmar",
-    detail: "Un speaker adicional de Hotmart se sumará próximamente a la agenda.",
+    name: "Miguel Alvira",
+    initials: "MA",
+    photo: "/speakers/miguel-alvira.jpeg",
+    topic: "Crecimiento en redes",
+    detail: "Cómo conseguí 50 millones de seguidores en mis redes.",
   },
 ];
 
@@ -102,7 +83,7 @@ export default function SpeakersSection() {
   return (
     <section className="relative bg-black px-6 py-24 md:py-32">
       <div className="mx-auto max-w-6xl">
-        <SectionTitle>Nuestros speakers confirmados</SectionTitle>
+        <SectionTitle>Algunos de los speakers confirmados</SectionTitle>
 
         <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {speakers.map((s, i) => (
@@ -145,6 +126,10 @@ export default function SpeakersSection() {
               )}
             </GlowCard>
           ))}
+        </div>
+
+        <div className="mt-16 text-center">
+          <ApplyButton />
         </div>
       </div>
     </section>

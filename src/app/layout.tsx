@@ -16,9 +16,9 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Mastermind Million | CDMX · 29 & 30 de agosto 2026",
+  title: "Mastermind Million | Cartagena · 22 & 23 de febrero 2027",
   description:
-    "50 líderes. 2 días. Una sola condición de entrada: +$1M USD facturados. Conoce todos los detalles de Mastermind Million, CDMX.",
+    "3 embudos para un negocio digital millonario: VSL, Lanzamientos y Eventos. Aplica para participar del encuentro Mastermind Million, Cartagena.",
 };
 
 export default function RootLayout({
