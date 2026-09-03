@@ -85,7 +85,7 @@ export default function Hero() {
         </motion.p>
 
         <motion.a
-          href="#"
+          href="https://mastermind-million.com/aplica"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.2 }}
