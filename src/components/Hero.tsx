@@ -8,8 +8,8 @@ import Logo from "./Logo";
 
 const headlineLines = [
   "3 embudos para un",
-  "negocio digital millonario: VSL,",
-  "Lanzamientos y Eventos",
+  "negocio digital millonario:",
+  "VSL, Lanzamientos y Eventos",
 ];
 
 export default function Hero() {
