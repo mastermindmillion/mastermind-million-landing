@@ -36,7 +36,8 @@ export default function ApplyFlow() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ answers: finalAnswers, utm }),
       });
-      setSubmitError(!res.ok);
+      const data = await res.json().catch(() => null);
+      setSubmitError(!res.ok || !data?.persisted);
     } catch {
       setSubmitError(true);
     } finally {
