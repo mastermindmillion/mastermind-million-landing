@@ -40,6 +40,13 @@ const speakers: Speaker[] = [
       "Cómo conseguí 4 millones de seguidores en Instagram y 5 millones en TikTok “como hobby”, y cómo hacer crecer tu cuenta.",
   },
   {
+    name: "Miguel Alvira",
+    initials: "MA",
+    photo: "/speakers/miguel-alvira.jpeg",
+    topic: "Crecimiento en redes",
+    detail: "Cómo conseguí 50 millones de seguidores en mis redes.",
+  },
+  {
     name: "Gustavo Duarte",
     initials: "GD",
     photo: "/speakers/gustavo-duarte.jpeg",
@@ -60,13 +67,6 @@ const speakers: Speaker[] = [
     photo: "/speakers/gislene-isquierdo.jpg",
     topic: "Pitch de ventas",
     detail: "Cómo hacer un pitch de ventas perfecto.",
-  },
-  {
-    name: "Miguel Alvira",
-    initials: "MA",
-    photo: "/speakers/miguel-alvira.jpeg",
-    topic: "Crecimiento en redes",
-    detail: "Cómo conseguí 50 millones de seguidores en mis redes.",
   },
 ];
 
