@@ -25,6 +25,13 @@ const speakers: Speaker[] = [
       "Debriefing completo de un lanzamiento de más de 3M USD.",
   },
   {
+    name: "Ismael Cala",
+    initials: "IC",
+    photo: "/speakers/ismael-cala.jpg",
+    focus: "50% 22%",
+    topic: "Por confirmar",
+  },
+  {
     name: "Coral Mujaes",
     initials: "CM",
     photo: "/speakers/coral-mujaes.jpeg",
