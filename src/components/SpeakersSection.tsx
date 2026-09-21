@@ -22,16 +22,7 @@ const speakers: Speaker[] = [
     photo: "/speakers/mateus-zaiatz.jpg",
     topic: "Debriefing de lanzamiento",
     detail:
-      "Debriefing completo de un lanzamiento de más de 2 millones de dólares.",
-  },
-  {
-    name: "Ismael Cala",
-    initials: "IC",
-    photo: "/speakers/ismael-cala.jpg",
-    focus: "50% 22%",
-    topic: "Marca personal",
-    detail:
-      "Cómo construir una marca personal sólida y una comunicación estratégica que te posicione como referente en tu industria.",
+      "Debriefing completo de un lanzamiento de más de 3M USD.",
   },
   {
     name: "Coral Mujaes",
