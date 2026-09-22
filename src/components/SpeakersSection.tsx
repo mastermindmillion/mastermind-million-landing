@@ -45,6 +45,15 @@ const speakers: Speaker[] = [
     detail: "Cómo hacer un pitch de ventas perfecto.",
   },
   {
+    name: "Pancho Faraggi",
+    initials: "PF",
+    photo: "/speakers/pancho-faraggi.jpg",
+    focus: "50% 20%",
+    topic: "Viralidad orgánica",
+    detail:
+      "Cómo conseguí 4 millones de seguidores en Instagram y 5 millones en TikTok “como hobby”, y cómo hacer crecer tu cuenta.",
+  },
+  {
     name: "Viny Loureiro (Galaxy)",
     initials: "VL",
     photo: "/speakers/viny-loureiro.webp",
