@@ -25,41 +25,11 @@ const speakers: Speaker[] = [
       "Debriefing completo de un lanzamiento de más de 3M USD.",
   },
   {
-    name: "Coral Mujaes",
-    initials: "CM",
-    photo: "/speakers/coral-mujaes.jpeg",
-    topic: "Por confirmar",
-  },
-  {
-    name: "Pancho Faraggi",
-    initials: "PF",
-    photo: "/speakers/pancho-faraggi.jpg",
-    focus: "50% 20%",
-    topic: "Viralidad orgánica",
-    detail:
-      "Cómo conseguí 4 millones de seguidores en Instagram y 5 millones en TikTok “como hobby”, y cómo hacer crecer tu cuenta.",
-  },
-  {
-    name: "Miguel Alvira",
+    name: "Miguel Alvira (Nova 30)",
     initials: "MA",
     photo: "/speakers/miguel-alvira.jpeg",
     topic: "Crecimiento en redes",
     detail: "Cómo conseguí 50 millones de seguidores en mis redes.",
-  },
-  {
-    name: "Gustavo Duarte",
-    initials: "GD",
-    photo: "/speakers/gustavo-duarte.jpeg",
-    topic: "Embudo de VSL",
-    detail:
-      "Cómo implementar un embudo de VSL que vende 10.000 USD al día. (Galaxy)",
-  },
-  {
-    name: "Viny Loureiro",
-    initials: "VL",
-    photo: "/speakers/viny-loureiro.webp",
-    focus: "50% 20%",
-    topic: "Por confirmar (Galaxy)",
   },
   {
     name: "Gislene Isquierdo",
@@ -67,6 +37,34 @@ const speakers: Speaker[] = [
     photo: "/speakers/gislene-isquierdo.jpg",
     topic: "Pitch de ventas",
     detail: "Cómo hacer un pitch de ventas perfecto.",
+  },
+  {
+    name: "Viny Loureiro (Galaxy)",
+    initials: "VL",
+    photo: "/speakers/viny-loureiro.webp",
+    focus: "50% 20%",
+    topic: "Por confirmar",
+  },
+  {
+    name: "Gustavo Duarte (Galaxy)",
+    initials: "GD",
+    photo: "/speakers/gustavo-duarte.jpeg",
+    topic: "Embudo de VSL",
+    detail:
+      "Cómo implementar un embudo de VSL que vende 10.000 USD al día.",
+  },
+  {
+    name: "Lau Camacho y Kim Garcia",
+    initials: "LK",
+    topic: "Inversiones en EE.UU",
+    detail:
+      "Cómo invertir en la bolsa de Estados Unidos desde cualquier país y convertir las ganancias de tus lanzamientos en patrimonio e ingresos pasivos.",
+  },
+  {
+    name: "Eduardo Zaiatz",
+    initials: "EZ",
+    topic: "Ventas diarias",
+    detail: "El embudo de evergreen MÁS FÁCIL de implementar",
   },
 ];
 
