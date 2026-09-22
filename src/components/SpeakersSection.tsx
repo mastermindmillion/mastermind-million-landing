@@ -62,6 +62,7 @@ const speakers: Speaker[] = [
   {
     name: "Lau Camacho y Kim Garcia",
     initials: "LK",
+    photo: "/speakers/kim-lau.jpg",
     topic: "Inversiones en EE.UU",
     detail:
       "Cómo invertir en la bolsa de Estados Unidos desde cualquier país y convertir las ganancias de tus lanzamientos en patrimonio e ingresos pasivos.",
@@ -69,6 +70,7 @@ const speakers: Speaker[] = [
   {
     name: "Eduardo Zaiatz",
     initials: "EZ",
+    photo: "/speakers/eduardo-zaiatz.jpg",
     topic: "Ventas diarias",
     detail: "El embudo de evergreen MÁS FÁCIL de implementar",
   },
