@@ -25,7 +25,13 @@ const speakers: Speaker[] = [
       "Debriefing completo de un lanzamiento de más de 3M USD.",
   },
   {
-    name: "Miguel Alvira (Nova 30)",
+    name: "Coral Mujaes",
+    initials: "CM",
+    photo: "/speakers/coral-mujaes.jpeg",
+    topic: "Por confirmar",
+  },
+  {
+    name: "Miguel Alvira",
     initials: "MA",
     photo: "/speakers/miguel-alvira.jpeg",
     topic: "Crecimiento en redes",
