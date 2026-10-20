@@ -21,6 +21,10 @@ const nextConfig: NextConfig = {
         source: "/encuesta",
         destination: "/encuesta.html",
       },
+      {
+        source: "/generales",
+        destination: "/invitacion-generales.html",
+      },
     ];
   },
 };
