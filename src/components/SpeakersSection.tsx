@@ -20,22 +20,22 @@ const speakers: Speaker[] = [
     name: "Mateus Zaiatz",
     initials: "MZ",
     photo: "/speakers/mateus-zaiatz.jpg",
-    topic: "Debriefing de lanzamiento",
+    topic: "VSL (evergreen)",
     detail:
-      "Debriefing completo de un lanzamiento de más de 3M USD.",
+      "La anatomía del embudo de VSL más escalado de Brasil (y cómo implementarlo en Latam)",
   },
   {
     name: "Coral Mujaes",
     initials: "CM",
     photo: "/speakers/coral-mujaes.jpeg",
-    topic: "Por confirmar",
+    topic: "Tema por confirmar",
   },
   {
     name: "Miguel Alvira",
     initials: "MA",
     photo: "/speakers/miguel-alvira.jpeg",
-    topic: "Crecimiento en redes",
-    detail: "Cómo conseguí 50 millones de seguidores en mis redes.",
+    topic: "50 millones de seguidores",
+    detail: "Cómo crecí orgánicamente en Instagram, Facebook e YouTube",
   },
   {
     name: "Gislene Isquierdo",
@@ -49,9 +49,9 @@ const speakers: Speaker[] = [
     initials: "PF",
     photo: "/speakers/pancho-faraggi.jpg",
     focus: "50% 20%",
-    topic: "Viralidad orgánica",
+    topic: "Oferta Irresistible",
     detail:
-      "Cómo conseguí 4 millones de seguidores en Instagram y 5 millones en TikTok “como hobby”, y cómo hacer crecer tu cuenta.",
+      "Explicando las ofertas de nuestros lanzamientos de +1M USD",
   },
   {
     name: "Viny Loureiro (Galaxy)",
@@ -59,14 +59,6 @@ const speakers: Speaker[] = [
     photo: "/speakers/viny-loureiro.webp",
     focus: "50% 20%",
     topic: "Por confirmar",
-  },
-  {
-    name: "Gustavo Duarte (Galaxy)",
-    initials: "GD",
-    photo: "/speakers/gustavo-duarte.jpeg",
-    topic: "Embudo de VSL",
-    detail:
-      "Cómo implementar un embudo de VSL que vende 10.000 USD al día.",
   },
   {
     name: "Lau Camacho y Kim Garcia",
@@ -80,8 +72,9 @@ const speakers: Speaker[] = [
     name: "Eduardo Zaiatz",
     initials: "EZ",
     photo: "/speakers/eduardo-zaiatz.jpg",
-    topic: "Ventas diarias",
-    detail: "El embudo de evergreen MÁS FÁCIL de implementar",
+    topic: "Lanzamiento Pago",
+    detail:
+      "Debriefing de un lanzamiento pago en el nicho de inglés — y cómo implementar en tu negocio",
   },
 ];
 
