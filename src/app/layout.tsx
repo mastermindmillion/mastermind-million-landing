@@ -16,7 +16,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Mastermind Million | Cartagena · 22 & 23 de febrero 2027",
+  title: "Mastermind Million | Cartagena · 18 & 19 de febrero 2027",
   description:
     "3 embudos para un negocio digital millonario: VSL, Lanzamiento y Lanzamiento Pago. Aplica para participar del encuentro Mastermind Million, Cartagena.",
 };

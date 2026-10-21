@@ -10,7 +10,7 @@ import ApplyButton from "./ApplyButton";
 import { IconSpark } from "./icons";
 
 const items = [
-  "2 días presenciales de Mastermind en Cartagena (22 y 23 de febrero 2027)",
+  "2 días presenciales de Mastermind en Cartagena (18 y 19 de febrero 2027)",
   "Acceso a sala de trabajo con 50 líderes del mismo nivel",
   "Hot seats individuales: estrategia en vivo validada por el grupo",
   "Sesiones de networking estructurado con metodología",

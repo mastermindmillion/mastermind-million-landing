@@ -13,7 +13,7 @@ const faqs = [
   },
   {
     q: "¿Dónde es el evento?",
-    a: "Cartagena, Colombia. 22 y 23 de febrero de 2027.",
+    a: "Cartagena, Colombia. 18 y 19 de febrero de 2027.",
   },
   {
     q: "¿Necesito una invitación de un miembro Million para aplicar?",

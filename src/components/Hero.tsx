@@ -57,7 +57,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mb-6 rounded-full border border-gold/30 px-4 py-2 font-body text-[11px] font-medium uppercase tracking-[0.2em] text-gold-light md:text-xs"
         >
-          CARTAGENA · 22 &amp; 23 DE FEBRERO 2027
+          CARTAGENA · 18 &amp; 19 DE FEBRERO 2027
         </motion.div>
 
         <h1 className="font-heading text-2xl font-medium leading-tight text-white sm:text-3xl md:text-4xl lg:text-5xl">

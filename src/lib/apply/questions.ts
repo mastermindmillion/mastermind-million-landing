@@ -84,7 +84,7 @@ export const questions: Question[] = [
     id: "compromiso",
     type: "choice",
     prompt:
-      "En caso de ser aceptado/a, ¿te comprometes a participar presencialmente los 2 días del encuentro en Cartagena (22 y 23 de febrero)?",
+      "En caso de ser aceptado/a, ¿te comprometes a participar presencialmente los 2 días del encuentro en Cartagena (18 y 19 de febrero)?",
     options: [
       { value: "Sí, me comprometo", label: "Sí, me comprometo" },
       { value: "No puedo confirmar asistencia", label: "No puedo confirmar asistencia" },

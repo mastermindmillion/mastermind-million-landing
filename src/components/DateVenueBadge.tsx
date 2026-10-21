@@ -16,7 +16,7 @@ export default function DateVenueBadge({
       <div className="flex flex-col items-center gap-3 text-center">
         <IconCalendar className="h-6 w-6 text-gold" />
         <p className="font-heading text-3xl font-semibold leading-none text-ink md:text-4xl">
-          22 y 23
+          18 y 19
         </p>
         <p className="font-body text-xs font-semibold uppercase tracking-[0.22em] text-gold">
           de febrero 2027
