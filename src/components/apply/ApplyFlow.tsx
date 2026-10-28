@@ -57,6 +57,13 @@ export default function ApplyFlow() {
     setQuestionIndex((i) => i + 1);
   }
 
+  // After a failed submit: back to the welcome screen, answers are kept.
+  function restart() {
+    setSubmitError(false);
+    setQuestionIndex(0);
+    setStep("welcome");
+  }
+
   function handleBack() {
     setQuestionIndex((i) => Math.max(0, i - 1));
   }
@@ -90,7 +97,7 @@ export default function ApplyFlow() {
         )}
 
         {step === "done" && (
-          <ConfirmationScreen key="done" error={submitError} />
+          <ConfirmationScreen key="done" error={submitError} onRetry={restart} />
         )}
       </AnimatePresence>
     </div>

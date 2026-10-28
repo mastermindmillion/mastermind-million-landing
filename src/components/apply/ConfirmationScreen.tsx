@@ -5,8 +5,10 @@ import Link from "next/link";
 
 export default function ConfirmationScreen({
   error,
+  onRetry,
 }: {
   error?: boolean;
+  onRetry?: () => void;
 }) {
   return (
     <motion.div
@@ -31,12 +33,13 @@ export default function ConfirmationScreen({
 
       {error ? (
         <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
-          <Link
-            href="/aplica"
+          <button
+            type="button"
+            onClick={onRetry}
             className="shimmer-btn rounded-full px-8 py-3.5 font-heading text-sm font-semibold uppercase tracking-[0.1em] text-black transition-transform hover:-translate-y-0.5"
           >
             Intentar de nuevo
-          </Link>
+          </button>
           <a
             href="https://wa.link/5p8hk4"
             target="_blank"

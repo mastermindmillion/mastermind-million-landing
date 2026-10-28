@@ -129,9 +129,9 @@ export function FailureScreen({ onRetry }: { onRetry: () => void }) {
         No pudimos guardar tu pre-confirmación
       </h1>
       <p className="max-w-[420px] text-sm leading-[1.8] text-text-muted">
-        Hubo un problema técnico y no logramos registrar tus respuestas. Tus
-        datos siguen aquí: inténtalo de nuevo y, si vuelve a fallar, escríbenos
-        a soporte.
+        Hubo un problema técnico y no logramos registrar tus respuestas. Vuelve
+        a intentarlo desde el inicio (tus respuestas se conservan) y, si
+        vuelve a fallar, escríbenos a soporte.
       </p>
       <button type="button" onClick={onRetry} className={`${btnPrimary} mt-8`}>
         Intentar de nuevo

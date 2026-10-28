@@ -106,6 +106,13 @@ export default function PreconfirmFlow() {
     setIndex((i) => i + 1);
   }
 
+  // After a failed submit: back to the welcome screen, answers are kept.
+  function restart() {
+    setFieldError(null);
+    setIndex(0);
+    setStage("welcome");
+  }
+
   function goBack() {
     setFieldError(null);
     if (index === 0) {
@@ -190,7 +197,7 @@ export default function PreconfirmFlow() {
 
             {stage === "done" && <SuccessScreen refCode={refCode} />}
 
-            {stage === "error" && <FailureScreen onRetry={submit} />}
+            {stage === "error" && <FailureScreen onRetry={restart} />}
           </motion.div>
         </AnimatePresence>
       </div>
