@@ -30,7 +30,7 @@ export function WelcomeScreen({ onStart }: { onStart: () => void }) {
       <p className="mb-9 max-w-[440px] text-[13.5px] leading-[1.8] text-text-muted sm:text-[14.5px]">
         Si estás aquí, alguien del equipo de{" "}
         <strong className="font-medium text-gold-light">Mastermind Million</strong>{" "}
-        te invitó directamente. Tómate dos minutos para pre-confirmar tu
+        te invitó directamente. Tómate un minuto para pre-confirmar tu
         asistencia y asegurar tu lugar en el encuentro de Cartagena (18 y 19 de
         febrero de 2027).
       </p>
@@ -106,9 +106,8 @@ export function SuccessScreen({ refCode }: { refCode: string }) {
         Pre-confirmación recibida
       </h1>
       <p className="max-w-[420px] text-sm leading-[1.8] text-text-muted">
-        Gracias por pre-confirmar tu lugar en el Mastermind Million. Te llegará
-        un correo y un mensaje de WhatsApp próximamente con los detalles del
-        encuentro.
+        Gracias por pre-confirmar tu lugar en el Mastermind Million. Tu
+        asistencia quedó registrada.
       </p>
       <p className="mt-3.5 text-sm font-medium text-gold-light">
         Nos vemos en Cartagena.

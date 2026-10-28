@@ -7,6 +7,3 @@ export const btnGhost = `${btnBase} border border-white/15 bg-transparent text-t
 
 export const lineInput =
   "w-full border-0 border-b-[1.5px] border-gold/30 bg-transparent px-1 py-3.5 font-body text-lg text-white transition-colors placeholder:text-[#5a5a5a] focus:border-gold focus:outline-none";
-
-export const boxInput =
-  "w-full resize-y rounded border border-gold/30 bg-transparent p-3.5 font-body text-base text-white transition-colors placeholder:text-[#5a5a5a] focus:border-gold focus:outline-none";

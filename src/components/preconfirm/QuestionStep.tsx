@@ -2,13 +2,11 @@
 
 import { motion } from "framer-motion";
 import {
-  COUNTRIES,
-  OTHER,
   detailVisible,
   type Answers,
   type Question,
 } from "@/lib/preconfirm/questions";
-import { boxInput, btnGhost, btnPrimary, lineInput } from "./ui";
+import { btnGhost, btnPrimary, lineInput } from "./ui";
 
 export default function QuestionStep({
   question: q,
@@ -40,7 +38,7 @@ export default function QuestionStep({
       </div>
       <h2 className="font-heading text-[19px] font-medium leading-[1.4] text-white sm:text-2xl">
         {q.title}
-        {!q.optional && <span className="text-gold"> *</span>}
+        <span className="text-gold"> *</span>
       </h2>
       {q.sub && (
         <p className="mt-2 text-[13px] leading-relaxed text-text-muted">
@@ -49,9 +47,9 @@ export default function QuestionStep({
       )}
 
       <div className="mt-7 sm:mt-8">
-        {(q.kind === "text" || q.kind === "email") && (
+        {q.kind === "text" && (
           <input
-            type={q.kind === "email" ? "email" : "text"}
+            type="text"
             value={value}
             onChange={(e) => onChange(q.id, e.target.value)}
             placeholder={q.placeholder}
@@ -59,67 +57,6 @@ export default function QuestionStep({
             autoFocus
             className={lineInput}
           />
-        )}
-
-        {q.kind === "phone" && (
-          <div className="flex gap-2.5">
-            <select
-              value={answers.telefonoPais ?? COUNTRIES[0].name}
-              onChange={(e) => onChange("telefonoPais", e.target.value)}
-              aria-label="Código de país"
-              className="w-[110px] shrink-0 cursor-pointer appearance-none rounded-none border-0 border-b-[1.5px] border-gold/30 bg-black px-1 py-3.5 text-center font-body text-base text-white focus:border-gold focus:outline-none"
-            >
-              {COUNTRIES.map((c) => (
-                <option key={c.name} value={c.name}>
-                  {c.flag} {c.dial}
-                </option>
-              ))}
-              <option value={OTHER}>🌐 {OTHER}</option>
-            </select>
-            {answers.telefonoPais === OTHER && (
-              <input
-                type="text"
-                inputMode="numeric"
-                value={answers.telefonoOtro ?? ""}
-                onChange={(e) => onChange("telefonoOtro", e.target.value)}
-                placeholder="+__"
-                aria-label="Código de país personalizado"
-                autoFocus
-                className={`${lineInput} w-20 shrink-0 text-center`}
-              />
-            )}
-            <input
-              type="tel"
-              value={value}
-              onChange={(e) => onChange(q.id, e.target.value)}
-              placeholder={q.placeholder}
-              autoComplete="off"
-              autoFocus={answers.telefonoPais !== OTHER}
-              className={`${lineInput} min-w-0 flex-1`}
-            />
-          </div>
-        )}
-
-        {q.kind === "select" && (
-          <div className="relative">
-            <select
-              value={value}
-              onChange={(e) => onChange(q.id, e.target.value)}
-              className="w-full cursor-pointer appearance-none rounded-none border-0 border-b-[1.5px] border-gold/30 bg-black py-3.5 pl-1 pr-8 font-body text-[17px] text-white focus:border-gold focus:outline-none"
-            >
-              <option value="" disabled>
-                Selecciona tu país
-              </option>
-              {q.options?.map((o) => (
-                <option key={o.value} value={o.value}>
-                  {o.label}
-                </option>
-              ))}
-            </select>
-            <span className="pointer-events-none absolute right-1 top-1/2 -translate-y-1/2 text-gold">
-              ▾
-            </span>
-          </div>
         )}
 
         {q.kind === "choice" && (
@@ -146,17 +83,6 @@ export default function QuestionStep({
           </div>
         )}
 
-        {q.kind === "textarea" && (
-          <textarea
-            value={value}
-            onChange={(e) => onChange(q.id, e.target.value)}
-            placeholder={q.placeholder}
-            rows={3}
-            autoFocus
-            className={boxInput}
-          />
-        )}
-
         {showDetail && q.detail && (
           <motion.div
             initial={{ opacity: 0, y: -6 }}
@@ -164,26 +90,15 @@ export default function QuestionStep({
             transition={{ duration: 0.25 }}
             className="mt-5"
           >
-            {q.detail.multiline ? (
-              <textarea
-                value={answers[q.detail.id] ?? ""}
-                onChange={(e) => onChange(q.detail!.id, e.target.value)}
-                placeholder={q.detail.placeholder}
-                rows={2}
-                autoFocus
-                className={boxInput}
-              />
-            ) : (
-              <input
-                type="text"
-                value={answers[q.detail.id] ?? ""}
-                onChange={(e) => onChange(q.detail!.id, e.target.value)}
-                placeholder={q.detail.placeholder}
-                autoComplete="off"
-                autoFocus
-                className={lineInput}
-              />
-            )}
+            <input
+              type="text"
+              value={answers[q.detail.id] ?? ""}
+              onChange={(e) => onChange(q.detail!.id, e.target.value)}
+              placeholder={q.detail.placeholder}
+              autoComplete="off"
+              autoFocus
+              className={lineInput}
+            />
           </motion.div>
         )}
       </div>
@@ -206,14 +121,12 @@ export default function QuestionStep({
         </button>
       </div>
 
-      {q.kind !== "textarea" && (
-        <div className="mt-5 text-[11px] tracking-wide text-[#5a5a5a] max-sm:hidden">
-          Presiona{" "}
-          <kbd className="rounded-[3px] border border-[#444] px-1.5 py-px text-[10px] text-text-muted">
-            Enter ↵
-          </kbd>
-        </div>
-      )}
+      <div className="mt-5 text-[11px] tracking-wide text-[#5a5a5a] max-sm:hidden">
+        Presiona{" "}
+        <kbd className="rounded-[3px] border border-[#444] px-1.5 py-px text-[10px] text-text-muted">
+          Enter ↵
+        </kbd>
+      </div>
     </div>
   );
 }

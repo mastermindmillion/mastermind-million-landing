@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import { randomInt } from "node:crypto";
 
-const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const REF_CHARS = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
 const MAX_LEN = 1000;
 
@@ -30,21 +29,12 @@ export async function POST(request: Request) {
 
   const a = body.answers ?? {};
   const nombre = str(a.nombre);
-  const email = str(a.email);
-  const whatsapp = str(a.whatsapp);
-  const pais = str(a.pais);
-  const ciudad = str(a.ciudad);
   const acompanante = str(a.acompanante);
-  const restriccion = str(a.restriccion_alimentaria);
+  const nombreAcompanante = str(a.nombre_acompanante);
 
   const valid =
     nombre.length >= 2 &&
-    EMAIL_REGEX.test(email) &&
-    whatsapp.replace(/\D/g, "").length >= 7 &&
-    pais &&
-    ciudad &&
-    (acompanante === "Sí" || acompanante === "No") &&
-    restriccion;
+    (acompanante === "No" || (acompanante === "Sí" && nombreAcompanante));
 
   if (!valid) {
     return NextResponse.json({ error: "Datos incompletos" }, { status: 400 });
@@ -55,15 +45,8 @@ export async function POST(request: Request) {
     fecha: new Date().toISOString(),
     ref,
     nombre,
-    email,
-    whatsapp,
-    pais,
-    ciudad,
     acompanante,
-    nombre_acompanante: str(a.nombre_acompanante),
-    restriccion_alimentaria: restriccion,
-    detalle_restriccion: str(a.detalle_restriccion),
-    comentarios: str(a.comentarios),
+    nombre_acompanante: acompanante === "Sí" ? nombreAcompanante : "",
     utm_source: str(body.utm?.source),
     utm_medium: str(body.utm?.medium),
     utm_campaign: str(body.utm?.campaign),
