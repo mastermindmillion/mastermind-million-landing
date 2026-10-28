@@ -24,15 +24,12 @@ export function WelcomeScreen({ onStart }: { onStart: () => void }) {
       </div>
 
       <h1 className="gold-gradient-text mb-[18px] font-heading text-[22px] font-medium leading-[1.35] sm:text-[30px]">
-        Este link es exclusivo para personas invitadas personalmente.
+        Este link es exclusivo para miembros Million.
       </h1>
 
       <p className="mb-9 max-w-[440px] text-[13.5px] leading-[1.8] text-text-muted sm:text-[14.5px]">
-        Si estás aquí, alguien del equipo de{" "}
-        <strong className="font-medium text-gold-light">Mastermind Million</strong>{" "}
-        te invitó directamente. Tómate un minuto para pre-confirmar tu
-        asistencia y asegurar tu lugar en el encuentro de Cartagena (18 y 19 de
-        febrero de 2027).
+        Tómate 20 segundos para preconfirmar tu asistencia y asegurar tu lugar
+        en el encuentro de Cartagena (18 y 19 de febrero de 2027).
       </p>
 
       <button type="button" onClick={onStart} className={btnPrimary}>
