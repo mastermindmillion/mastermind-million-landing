@@ -24,7 +24,8 @@ export function WelcomeScreen({ onStart }: { onStart: () => void }) {
       </div>
 
       <h1 className="gold-gradient-text mb-[18px] font-heading text-[22px] font-medium leading-[1.35] sm:text-[30px]">
-        Este link es exclusivo para Miembros Million.
+        <span className="block">Este link es exclusivo para</span>
+        <span className="block">Miembros Million.</span>
       </h1>
 
       <p className="mb-9 max-w-[440px] text-[13.5px] leading-[1.8] text-text-muted sm:text-[14.5px]">
