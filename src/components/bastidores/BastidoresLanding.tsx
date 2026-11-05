@@ -8,10 +8,21 @@ import SectionTitle from "../SectionTitle";
 import ScrollReveal from "../ScrollReveal";
 import WaveBand from "../WaveBand";
 import GlowCard from "../GlowCard";
-import { IconCalendar, IconCheck, IconPin } from "../icons";
+import { IconCalendar, IconCheck, IconClock, IconPin } from "../icons";
 
 const CTA_URL = "https://whop.com/checkout/plan_uwV40eVyVOSH1";
 const SPOTS = 60;
+const SUPPORT_URL =
+  "https://wa.me/573185389816?text=Hola%2C%20tengo%20dudas%20sobre%20el%20evento%20de%20los%20Bastidores%20de%20Daniel%20Habif";
+
+function WhatsAppIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className={className}>
+      <path d="M4 20l1.3-3.9A7.9 7.9 0 1112 20a7.9 7.9 0 01-4-1.1z" />
+      <path d="M9 9.5c0 3 2.5 5.5 5.5 5.5" />
+    </svg>
+  );
+}
 
 function CtaButton({
   className = "",
@@ -45,19 +56,27 @@ function Hero() {
         initial={{ opacity: 0, scale: 1.08 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.6, ease: "easeOut" }}
-        className="absolute inset-x-0 top-0 h-[62vh] lg:-top-[14%] lg:left-auto lg:right-0 lg:h-[114%] lg:w-[66%]"
+        className="absolute inset-0 lg:left-[14%] lg:-right-[14%]"
       >
         <Image
-          src="/bastidores/hero-daniel.jpg"
-          alt="Daniel Habif en el escenario frente al público"
+          src="/bastidores/hero-daniel-mobile.jpg"
+          alt="Daniel Habif"
           fill
           priority
-          sizes="(min-width: 1024px) 66vw, 100vw"
-          className="object-cover object-[50%_30%] lg:object-center"
+          sizes="100vw"
+          className="object-cover object-[60%_0%] lg:hidden"
+        />
+        <Image
+          src="/bastidores/hero-daniel-2.jpg"
+          alt="Daniel Habif"
+          fill
+          priority
+          sizes="100vw"
+          className="hidden object-cover object-[100%_25%] lg:block"
         />
       </motion.div>
-      <div className="absolute inset-x-0 top-0 h-[62vh] bg-gradient-to-t from-black via-black/30 to-black/40 lg:hidden" />
-      <div className="absolute inset-0 hidden bg-gradient-to-r from-black from-30% via-black/50 via-50% to-transparent lg:block" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black from-25% via-black/40 via-50% to-transparent lg:hidden" />
+      <div className="absolute inset-0 hidden bg-gradient-to-r from-black from-20% via-black/40 via-45% to-transparent lg:block" />
       <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black to-transparent" />
       <ParticlesBg />
       <div className="pointer-events-none absolute -left-40 top-1/3 h-[480px] w-[480px] rounded-full bg-gold/10 blur-[140px]" />
@@ -68,10 +87,11 @@ function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex items-center gap-3 font-body text-xs font-medium uppercase tracking-[0.3em] text-gold-light md:text-sm"
+            className="flex flex-wrap items-center gap-x-3 gap-y-2 font-body text-xs font-medium uppercase tracking-[0.3em] text-gold-light md:text-sm"
           >
             <span className="h-px w-8 bg-gold/60" />
-            CDMX · 18, 19 y 20 de enero
+            <span>CDMX · 18, 19 y 20 de enero</span>
+            <span className="text-gold-light/70"><span className="hidden sm:inline">· </span>4:30 – 8:30 PM</span>
           </motion.div>
 
           <motion.h1
@@ -82,7 +102,7 @@ function Hero() {
           >
             3 días acompañando el detrás de escenas del{" "}
             <span className="gold-gradient-text">
-              mayor lanzamiento de Latinoamérica
+              mayor lanzamiento online de Latinoamérica
             </span>
             , con más de 100 mil personas en directo.
           </motion.h1>
@@ -359,6 +379,16 @@ function IncludeSection() {
           </div>
           <div className="h-px w-16 bg-gold/30 sm:h-16 sm:w-px" />
           <div className="flex flex-col items-center gap-3 text-center">
+            <IconClock className="h-6 w-6 text-gold" />
+            <p className="font-heading text-3xl font-semibold leading-none text-ink md:text-4xl">
+              4:30 – 8:30 PM
+            </p>
+            <p className="font-body text-xs font-semibold uppercase tracking-[0.22em] text-gold">
+              hora CDMX
+            </p>
+          </div>
+          <div className="h-px w-16 bg-gold/30 sm:h-16 sm:w-px" />
+          <div className="flex flex-col items-center gap-3 text-center">
             <IconPin className="h-6 w-6 text-gold" />
             <p className="font-heading text-3xl font-semibold leading-none text-ink md:text-4xl">
               CDMX
@@ -421,7 +451,7 @@ const faqs = [
   },
   {
     q: "¿Dónde y cuándo es?",
-    a: "En Ciudad de México (CDMX), los días 18, 19 y 20 de enero.",
+    a: "En Ciudad de México (CDMX), los días 18, 19 y 20 de enero. Cada día la llegada es a partir de las 4:30 pm y terminamos a las 8:30 pm (hora de CDMX).",
   },
   {
     q: "¿Qué voy a vivir exactamente?",
@@ -491,20 +521,57 @@ function FAQSection() {
         <div className="mt-16 text-center">
           <CtaButton />
         </div>
+
+        <ScrollReveal delay={0.1} className="mt-14 text-center">
+          <p className="font-body text-sm text-text-muted md:text-base">
+            ¿Tienes otra pregunta?
+          </p>
+          <a
+            href={SUPPORT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 inline-flex items-center gap-2 rounded-full border border-gold/30 px-5 py-2.5 font-body text-sm font-medium text-gold-light transition-colors hover:border-gold/60 hover:text-gold"
+          >
+            <WhatsAppIcon className="h-4 w-4" />
+            Escríbele a soporte por WhatsApp
+          </a>
+        </ScrollReveal>
       </div>
     </section>
   );
 }
 
+function Footer() {
+  return (
+    <footer className="border-t border-gold/10 bg-black px-6 py-10 text-center">
+      <a
+        href={SUPPORT_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-2 font-body text-xs text-text-muted transition-colors hover:text-gold-light"
+      >
+        <WhatsAppIcon className="h-3.5 w-3.5" />
+        Soporte por WhatsApp
+      </a>
+      <p className="mt-4 font-body text-xs text-text-muted/70">
+        © 2026 Todos los derechos reservados.
+      </p>
+    </footer>
+  );
+}
+
 export default function BastidoresLanding() {
   return (
-    <main>
-      <Hero />
-      <WhySection />
-      <AboutSection />
-      <IncludeSection />
-      <ScarcitySection />
-      <FAQSection />
-    </main>
+    <>
+      <main>
+        <Hero />
+        <WhySection />
+        <AboutSection />
+        <IncludeSection />
+        <ScarcitySection />
+        <FAQSection />
+      </main>
+      <Footer />
+    </>
   );
 }
