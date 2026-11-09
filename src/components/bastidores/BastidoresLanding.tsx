@@ -222,7 +222,7 @@ function WhySection() {
 
 function AboutSection() {
   return (
-    <section className="relative bg-black px-6 pb-36 md:pb-44">
+    <section className="relative bg-black px-6 py-28 md:py-36">
       <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
       <div>
         <ScrollReveal>
@@ -243,14 +243,6 @@ function AboutSection() {
           <p className="mt-4 font-body text-base leading-relaxed text-text-muted md:text-lg">
             Autor de bestsellers como <em>Inquebrantables</em>, convirtió su
             voz en un movimiento que inspira a millones a transformar su vida.
-          </p>
-        </ScrollReveal>
-        <ScrollReveal delay={0.2} className="mt-10 border-l-2 border-gold/60 pl-6">
-          <p className="gold-gradient-text font-heading text-5xl font-semibold leading-none md:text-6xl">
-            +US$2M
-          </p>
-          <p className="mt-3 font-body text-sm uppercase tracking-[0.2em] text-gold-light">
-            facturados en su primer lanzamiento
           </p>
         </ScrollReveal>
         <ScrollReveal delay={0.3}>
@@ -566,9 +558,9 @@ export default function BastidoresLanding() {
       <main>
         <Hero />
         <WhySection />
-        <AboutSection />
         <IncludeSection />
         <ScarcitySection />
+        <AboutSection />
         <FAQSection />
       </main>
       <Footer />
