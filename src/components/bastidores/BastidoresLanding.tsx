@@ -56,7 +56,7 @@ function Hero() {
         initial={{ opacity: 0, scale: 1.08 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.6, ease: "easeOut" }}
-        className="absolute inset-0 lg:left-[14%] lg:-right-[14%]"
+        className="absolute inset-0 lg:left-[8%] lg:-right-[8%]"
       >
         <Image
           src="/bastidores/hero-daniel-mobile.jpg"
@@ -243,11 +243,6 @@ function AboutSection() {
           <p className="mt-4 font-body text-base leading-relaxed text-text-muted md:text-lg">
             Autor de bestsellers como <em>Inquebrantables</em>, convirtió su
             voz en un movimiento que inspira a millones a transformar su vida.
-          </p>
-        </ScrollReveal>
-        <ScrollReveal delay={0.3}>
-          <p className="mt-8 font-body text-base text-white md:text-lg">
-            Ahora vas a ver desde adentro cómo se construye el siguiente.
           </p>
         </ScrollReveal>
       </div>
