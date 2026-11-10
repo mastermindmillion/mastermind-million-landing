@@ -186,7 +186,7 @@ function WhySection() {
             <GlowCard
               key={col.title}
               delay={i * 0.15}
-              className={col.muted ? "opacity-70" : "border-gold/40"}
+              className={`bg-black-soft/55! ${col.muted ? "opacity-80" : "border-gold/40"}`}
             >
               <h3
                 className={`font-heading text-xl font-semibold md:text-2xl ${
@@ -293,7 +293,17 @@ const includes = [
 function IncludeSection() {
   return (
     <WaveBand className="z-10 px-6 py-28 md:py-36">
-      <div className="mx-auto max-w-6xl">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-[1100px] overflow-hidden md:h-[760px]">
+        <Image
+          src="/bastidores/publico.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover object-[50%_56%] opacity-[0.3]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[var(--white)] from-0% via-transparent via-25% to-[var(--white)] to-95%" />
+      </div>
+      <div className="relative mx-auto max-w-6xl">
         <SectionTitle className="text-3xl md:text-5xl">¿Qué incluye?</SectionTitle>
 
         <motion.div
