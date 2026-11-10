@@ -56,27 +56,19 @@ function Hero() {
         initial={{ opacity: 0, scale: 1.08 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.6, ease: "easeOut" }}
-        className="absolute inset-0 lg:left-[8%] lg:-right-[8%]"
+        className="absolute inset-x-0 top-0 h-[48vh] lg:inset-0 lg:h-full"
       >
         <Image
-          src="/bastidores/hero-daniel-mobile.jpg"
-          alt="Daniel Habif"
+          src="/bastidores/hero-teatro.jpg"
+          alt="Daniel Habif en el escenario frente al público"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[60%_0%] lg:hidden"
-        />
-        <Image
-          src="/bastidores/hero-daniel-2.jpg"
-          alt="Daniel Habif"
-          fill
-          priority
-          sizes="100vw"
-          className="hidden object-cover object-[100%_25%] lg:block"
+          className="object-cover object-[100%_70%] lg:object-[50%_80%]"
         />
       </motion.div>
-      <div className="absolute inset-0 bg-gradient-to-t from-black from-25% via-black/40 via-50% to-transparent lg:hidden" />
-      <div className="absolute inset-0 hidden bg-gradient-to-r from-black from-20% via-black/40 via-45% to-transparent lg:block" />
+      <div className="absolute inset-x-0 top-0 h-[48vh] bg-gradient-to-t from-black via-black/10 to-black/20 lg:hidden" />
+      <div className="absolute inset-0 hidden bg-gradient-to-r from-black/85 from-20% via-black/35 via-50% to-transparent to-70% lg:block" />
       <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black to-transparent" />
       <ParticlesBg />
       <div className="pointer-events-none absolute -left-40 top-1/3 h-[480px] w-[480px] rounded-full bg-gold/10 blur-[140px]" />
@@ -145,6 +137,7 @@ const contrast = [
       "Las decisiones que se toman en tiempo real",
       "Cómo opera el equipo cuando 100 mil personas están conectadas",
       "Qué funcionó, qué no y por qué",
+      "Sé testigo de la preproducción, producción y postproducción del evento digital más grande de LATAM",
     ],
     muted: false,
   },
@@ -154,13 +147,20 @@ function WhySection() {
   return (
     <section className="relative overflow-hidden bg-black px-6 py-24 md:py-32">
       <Image
-        src="/bastidores/hero-publico.jpg"
+        src="/bastidores/backstage-control-mobile.jpg"
+        alt="Daniel Habif en la consola de control durante un evento"
+        fill
+        sizes="100vw"
+        className="object-cover object-[35%_50%] opacity-80 lg:hidden"
+      />
+      <Image
+        src="/bastidores/backstage-control.jpg"
         alt=""
         fill
         sizes="100vw"
-        className="object-cover opacity-30"
+        className="hidden object-cover object-[30%_50%] opacity-80 lg:block"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-black/70 to-black" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-black/45 to-black" />
       <div className="relative mx-auto max-w-6xl">
         <ScrollReveal className="text-center">
           <p className="font-body text-xs font-semibold uppercase tracking-[0.3em] text-gold">
@@ -404,7 +404,7 @@ function ScarcitySection() {
         sizes="100vw"
         className="object-cover object-[center_30%] opacity-35"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-black/55 to-black" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/35 to-black" />
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/10 blur-[140px]" />
       <div className="relative mx-auto max-w-3xl text-center">
         <ScrollReveal>
