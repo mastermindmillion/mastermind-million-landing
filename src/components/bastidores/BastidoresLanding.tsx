@@ -56,7 +56,7 @@ function Hero() {
         initial={{ opacity: 0, scale: 1.08 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.6, ease: "easeOut" }}
-        className="absolute inset-x-0 top-0 h-[48vh] lg:inset-0 lg:h-full"
+        className="absolute inset-x-0 top-0 h-[48vh] lg:inset-y-0 lg:-left-[20%] lg:right-[8%] lg:h-full"
       >
         <Image
           src="/bastidores/hero-teatro.jpg"
@@ -68,6 +68,7 @@ function Hero() {
         />
       </motion.div>
       <div className="absolute inset-x-0 top-0 h-[48vh] bg-gradient-to-t from-black via-black/10 to-black/20 lg:hidden" />
+      <div className="absolute inset-y-0 right-0 hidden w-[22%] bg-gradient-to-l from-black from-35% to-transparent lg:block" />
       <div className="absolute inset-0 hidden bg-gradient-to-r from-black/85 from-20% via-black/35 via-50% to-transparent to-70% lg:block" />
       <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black to-transparent" />
       <ParticlesBg />
