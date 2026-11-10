@@ -304,7 +304,11 @@ function IncludeSection() {
         <div className="absolute inset-0 bg-gradient-to-b from-[var(--white)] from-0% via-transparent via-25% to-[var(--white)] to-95%" />
       </div>
       <div className="relative mx-auto max-w-6xl">
-        <SectionTitle className="text-3xl md:text-5xl">¿Qué incluye?</SectionTitle>
+        <ScrollReveal className="text-center">
+          <h2 className="font-heading text-3xl font-medium leading-tight text-ink md:text-5xl">
+            ¿Qué incluye?
+          </h2>
+        </ScrollReveal>
 
         <motion.div
           initial="hidden"
