@@ -93,7 +93,7 @@ function Hero() {
             className="mt-6 font-heading text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-5xl"
           >
             3 días acompañando el detrás de escenas del{" "}
-            <span className="gold-gradient-text">
+            <span className="box-decoration-clone bg-[linear-gradient(90deg,#d4a362_0%,#ecd9a8_55%,#d4a362_100%)] bg-clip-text text-transparent">
               mayor lanzamiento online de Latinoamérica
             </span>
             , con más de 100 mil personas en directo.
