@@ -169,17 +169,25 @@ function WhySection() {
             Desde adentro
           </p>
         </ScrollReveal>
-        <SectionTitle className="mt-4 text-3xl md:text-5xl">
-          No es ver un lanzamiento.
+        <SectionTitle className="mx-auto mt-4 max-w-5xl text-balance text-2xl md:text-4xl">
+          Miles ven un lanzamiento desde afuera.
           <br />
-          Es vivirlo desde los bastidores.
+          Pocos son quienes tienen el privilegio de conocer todo lo que sucede
+          antes de que el mundo lo vea.
         </SectionTitle>
         <ScrollReveal delay={0.1}>
-          <p className="mx-auto mt-6 max-w-2xl text-center font-body text-base text-text-muted md:text-lg">
-            Más de 100 mil personas van a ver el lanzamiento desde afuera. Un
-            grupo de {SPOTS} infoproductores lo va a vivir desde adentro: en la
-            sala donde se toman las decisiones.
-          </p>
+          <div className="mx-auto mt-6 max-w-2xl space-y-4 text-center font-body text-base font-semibold text-text-muted md:text-lg">
+            <p>
+              Más de 100,000 personas serán testigos de este lanzamiento. Pero solo{" "}
+              {SPOTS} infoproductores tendrán acceso a su corazón. Entra detrás de
+              escena. Vive el proceso, las decisiones, los desafíos y los momentos
+              que hacen posible un lanzamiento histórico.
+            </p>
+            <p className="pt-2 font-heading text-lg font-semibold text-white md:text-xl">
+              Una cosa es ver cómo se hace historia. Otra muy distinta es entrar a
+              la sala donde se está escribiendo.
+            </p>
+          </div>
         </ScrollReveal>
 
         <div className="mt-16 grid gap-6 md:grid-cols-2">
