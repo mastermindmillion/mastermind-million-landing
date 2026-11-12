@@ -56,19 +56,21 @@ function Hero() {
         initial={{ opacity: 0, scale: 1.08 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.6, ease: "easeOut" }}
-        className="absolute inset-x-0 top-0 h-[64vh] lg:-top-[16%] lg:bottom-0 lg:left-auto lg:h-auto lg:w-[56%]"
+        className="absolute inset-x-0 top-0 h-[44vh] lg:inset-y-0 lg:left-[42%] lg:right-0 lg:h-full"
       >
         <Image
-          src="/bastidores/hero-daniel-publico.jpg"
-          alt="Daniel Habif en el escenario frente al público"
+          src="/bastidores/hero-pantalla.jpg"
+          alt="Daniel Habif en el escenario frente a un auditorio lleno"
           fill
           priority
-          sizes="(min-width: 1024px) 56vw, 100vw"
-          className="object-cover object-[50%_20%] lg:object-[50%_0%]"
+          quality={90}
+          sizes="(min-width: 1024px) 58vw, 100vw"
+          className="object-cover object-[100%_50%]"
         />
       </motion.div>
-      <div className="absolute inset-x-0 top-0 h-[64vh] bg-gradient-to-t from-black via-black/20 to-black/30 lg:hidden" />
-      <div className="absolute inset-0 hidden bg-gradient-to-r from-black from-44% via-black/50 via-52% to-transparent to-64% lg:block" />
+      <div className="absolute inset-x-0 top-0 h-[44vh] bg-gradient-to-t from-black via-black/10 to-black/30 lg:hidden" />
+      <div className="absolute inset-y-0 left-[42%] hidden w-[22%] bg-gradient-to-r from-black to-transparent lg:block" />
+      <div className="absolute inset-y-0 left-0 hidden w-[42%] bg-black lg:block" />
       <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black to-transparent" />
       <ParticlesBg />
       <div className="pointer-events-none absolute -left-40 top-1/3 h-[480px] w-[480px] rounded-full bg-gold/10 blur-[140px]" />
@@ -294,11 +296,11 @@ function IncludeSection() {
     <WaveBand className="z-10 px-6 py-28 md:py-36">
       <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-[1100px] overflow-hidden md:h-[760px]">
         <Image
-          src="/bastidores/publico.jpg"
+          src="/bastidores/meet-greet.jpg"
           alt=""
           fill
           sizes="100vw"
-          className="object-cover object-[50%_56%] opacity-[0.3]"
+          className="object-cover object-[60%_40%] opacity-[0.42]"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[var(--white)] from-0% via-transparent via-25% to-[var(--white)] to-95%" />
       </div>
@@ -323,7 +325,7 @@ function IncludeSection() {
                 hidden: { opacity: 0, y: 24 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
               }}
-              className="rounded-2xl border border-gold/25 bg-white p-8 shadow-[0_10px_40px_rgba(21,18,13,0.06)]"
+              className="rounded-2xl border border-gold/30 bg-white/70 p-8 shadow-[0_10px_40px_rgba(21,18,13,0.06)]"
             >
               <span className="gold-gradient-text font-heading text-4xl font-semibold">
                 {item.n}
