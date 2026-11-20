@@ -40,7 +40,9 @@ const speakers: Speaker[] = [
   {
     name: "Cris Urzua",
     initials: "CU",
-    photo: "/speakers/Cris-urzua.jpeg",
+    photo: "/speakers/cris-urzua3.jpg",
+    focus: "50% 15%",
+    scale: 1.5,
     topic: "Inteligencia Artificial",
     detail: "Cómo usar IA para aumentar tu ganancia y productividad",
   },
