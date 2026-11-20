@@ -38,11 +38,11 @@ const speakers: Speaker[] = [
     detail: "Cómo crecí orgánicamente en Instagram, Facebook e YouTube",
   },
   {
-    name: "Gislene Isquierdo",
-    initials: "GI",
-    photo: "/speakers/gislene-isquierdo.jpg",
-    topic: "Pitch de ventas",
-    detail: "Cómo hacer un pitch de ventas perfecto.",
+    name: "Cris Urzua",
+    initials: "CU",
+    photo: "/speakers/Cris-urzua.jpeg",
+    topic: "Inteligencia Artificial",
+    detail: "Cómo usar IA para aumentar tu ganancia y productividad",
   },
   {
     name: "Pancho Faraggi",
